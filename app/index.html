@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="taco">
 <head>
-  <title>Hello, World</title>
+  <title>Hello, Angular Day 1</title>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
-  <h1>Hello, <i class="fa fa-globe"></i></h1>
-  
+<body ng-app>
+<!--   <div class="container" ng-controller="MyController">
+       directives ngapp 
+            directive is scoped w/in the scope of the tag
+            in this case, w/in the body tag, and every element
+            inside of the body tag
+            You can put it inside the html tag to make the title dynamic
+      <h1>Hello Angular</h1>
+      <h1>{{ 5 + 5 }}</h1>
+
+      <p>{{ 10 - 3 }}</p> -->
+
+<!--       <p>{{ coolText }} - this is my text</p>
+
+      <input ng-model="coolText" type="text" placeholder="Type here..."> -->
+<!--       <p>My Cool Text: {{ coolText }}</p>
+      <p>My name:{{person.name}}</p>
+      <p>My age: {{person.age}}</p>
+      <p>{{ text }}</p>
+
+  </div> -->
+  <div class="container" ng-controller="MyController">
+    
+    <h1>Hello Angular</h1>
+
+    <form ng-submit="addTask(task)">
+      <input placeholder="Task" ng-model="task.taskName">
+      <input type="date" ng-model="task.dueDate">
+<!--       <input type="time" ng-model="task.dueTime"> -->
+
+      <button>Add Task</button>
+    </form>
+
+    <!-- <p>{{ taskList }}</p> -->
+    <h3>My To Do Items</h3>
+      <ul>
+          <!-- below is doing a forEach; t can be called anything -->
+          <li ng-repeat="t in taskList">
+          {{ t.name }} is due {{ t.due }}
+          </li>
+      </ul>
+
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
